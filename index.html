@@ -4,84 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Psychic Game</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Enter Psychic World</title>
 </head>
 <body>
-    <h1>The Psychic Game</h1>
-    <h2>Guess the letter I am thinking</h2>
-    <div>
-        <p>Wins: <span id="wins"></span></p>
-    </div>
-    <div>
-            <p>Losses: <span id="losses"></span></p>
-        </div>
-        <div>
-                <p>Tries Left: <span id="tries"></span></p>
-            </div>
-
-            <div>
-                    <p>Your guesses so far: <span id="soFar"></span></p>
-                </div>
-<script>
-    
-    var win = document.getElementById("wins");
-    var loss = document.getElementById("losses");
-    var soFar = document.getElementById("soFar");
-    var letters="qwertyuiopasdfghjklzxcvbnm";
-    var compLetter = letters.charAt(Math.floor(Math.random()* letters.length));
-    var tries = document.getElementById("tries");
-    console.log(compLetter);
-    var chances = 3;
-    var losses = 0;
-    var used=[];
-    var wins=0;
-    loss.textContent=losses;
-    win.textContent=wins;
-    tries.textContent=chances;
-document.onkeyup = function(keyPress) {
-    var userGuess = keyPress.key;  
-    used.push(userGuess);
-    console.log(" "+used);
-    soFar.textContent=" "+used;
-    chances --;
-    tries.textContent=chances;
-    function reStart() {
-        compLetter=letters.charAt(Math.floor(Math.random()* letters.length));
-        console.log(compLetter);
-        clear(used);
-    }
-    function clear(bye) {
-            for (i=0;i < used.length+2;i++){
-            bye.pop();
-            }
-        } 
-    if (chances===0 && userGuess!==compLetter) {
-        
-        alert("You lose!!!!");
-        loss.textContent=losses++;
-        chances=3; 
-        tries.textContent=chances; 
-        reStart();      
-    }
-    if (userGuess===compLetter) {
-        alert("You guessed it!!!");
-        wins++;
-        win.textContent=wins;
-        chances=3; 
-        tries.textContent=chances;
-        reStart();
-        
-        
-    } else {
-        console.log("loss");
-        loss.textContent=losses;
-        
-    }
-
-};
-
-
-</script>
-    
+    <div class="jumbotron text-center">
+        <h1 class="display-4">Welcome To My Psychic Realm</h1>
+        <p class="lead">This is a complex game of otherworldly magic</p>
+        <hr class="my-4">
+        <p class="text-secondary">It uses extreme concentration and should only be performed by professionals...</p>
+        <a class="btn btn-dark btn-lg" href="psychic.html" role="button">Enter The Netherworld</a>
+      </div>
 </body>
 </html>
