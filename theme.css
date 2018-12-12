@@ -6,4 +6,13 @@ background-position:center;
 }
 img {
     opacity: 0.1;
+}*/
+.row {
+    display: none;
 }
+@media only screen and (max-width: 600px) {
+    .row {
+        display: initial;
+    }
+  }
+  

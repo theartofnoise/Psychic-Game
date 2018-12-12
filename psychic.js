@@ -22,7 +22,7 @@ document.onkeyup = function(keyPress) {
     var userGuess = keyPress.key;  
     used.push(userGuess);
     console.log(" "+used);
-    soFar.textContent=" "+used;
+    soFar.textContent=" "+used.join(" ");
     chances --;
     tries.textContent=chances;
     //restarts the game
@@ -42,9 +42,9 @@ document.onkeyup = function(keyPress) {
     if (chances===0 && userGuess!==compLetter) {       
         loss.textContent=losses++;
         chances=10; 
-        tries.textContent=chances;          
-        reStart();
-        alert("I was thinking of "+compLetter); 
+        tries.textContent=chances;
+        alert("I was thinking of "+compLetter);          
+        reStart(); 
         alert("You lose!!!!");  
     }
     //checks for correct guess
