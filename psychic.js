@@ -43,7 +43,7 @@ document.onkeyup = function(keyPress) {
         loss.textContent=losses++;
         chances=10; 
         tries.textContent=chances;
-        alert("I was thinking of "+compLetter);          
+        alert("I was thinking of "+compLetter.toUpperCase());          
         reStart(); 
         alert("You lose!!!!");  
     }
@@ -54,9 +54,8 @@ document.onkeyup = function(keyPress) {
         win.textContent=wins;
         chances=10; 
         tries.textContent=chances;
+        alert("You guessed it!!! It was "+compLetter.toUpperCase()+"!");
         reStart();
-        alert("You guessed it!!!");
-        
     //you lost 
     } else {
         console.log("loss");
